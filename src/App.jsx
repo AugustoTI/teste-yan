@@ -1,12 +1,10 @@
-import { Footer } from './components/Footer';
-import { Header } from './components/Header';
+import { MyRoutes } from './routes';
 import { GlobalStyles } from './styles/global';
 
 function App() {
   return (
     <>
-      <Header />
-      <Footer />
+      <MyRoutes />
       <GlobalStyles />
     </>
   );
