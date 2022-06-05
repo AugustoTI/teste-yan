@@ -3,9 +3,6 @@ import styled, { css } from 'styled-components';
 
 export const Main = styled.main`
   ${() => css`
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 6rem 1.6rem;
     display: grid;
     grid-template-columns: 2fr 38rem;
     gap: 2rem;
@@ -18,7 +15,6 @@ export const Main = styled.main`
     @media (max-width: 800px) {
       & {
         grid-template-columns: 1fr;
-        padding: 3rem 1.6rem;
       }
     }
   `}

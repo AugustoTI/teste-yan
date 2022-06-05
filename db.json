@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "asics gel nimbus 24",
+      "price": 1299.99,
+      "stock": 5,
+      "description": "Maximum comfort and comfort are perfect loves in the new Gelimbus 24 version.",
+      "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
+      "images": "/src/assets/images/asics-gel-nimbus-24.jpg"
+    },
+    {
+      "id": 2,
+      "name": "asics gel nimbus 24",
+      "price": 1299.99,
+      "stock": 5,
+      "description": "Maximum comfort and comfort are perfect loves in the new Gelimbus 24 version.",
+      "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
+      "images": "/src/assets/images/asics-gel-nimbus-24.jpg"
+    },
+    {
+      "id": 3,
+      "name": "asics gel nimbus 24",
+      "price": 1299.99,
+      "stock": 5,
+      "description": "Maximum comfort and comfort are perfect loves in the new Gelimbus 24 version.",
+      "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
+      "images": "/src/assets/images/asics-gel-nimbus-24.jpg"
+    },
+    {
+      "id": 4,
+      "name": "asics gel nimbus 24",
+      "price": 1299.99,
+      "stock": 5,
+      "description": "Maximum comfort and comfort are perfect loves in the new Gelimbus 24 version.",
+      "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
+      "images": "/src/assets/images/asics-gel-nimbus-24.jpg"
+    },
+    {
+      "id": 5,
+      "name": "asics gel nimbus 24",
+      "price": 1299.99,
+      "stock": 5,
+      "description": "Maximum comfort and comfort are perfect loves in the new Gelimbus 24 version.",
+      "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
+      "images": "/src/assets/images/asics-gel-nimbus-24.jpg"
+    }
+  ]
+}
