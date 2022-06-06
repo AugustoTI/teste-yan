@@ -42,6 +42,7 @@ export const HeaderContainer = styled.div`
         right: 0;
         border-radius: 4px;
         border: 1px solid;
+        z-index: 3;
       }
     }
   `}

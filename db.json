@@ -3,47 +3,56 @@
     {
       "id": 1,
       "name": "asics gel nimbus 24",
-      "price": 1299.99,
+      "price": 1099.99,
       "stock": 5,
-      "description": "Maximum comfort and comfort are perfect loves in the new Gelimbus 24 version.",
+      "description": "Rubber outsole with a special formulation to resist abrasion (wear), located in critical areas, such as the heel. Asics Lite: Extremely light and resistant rubber with high durability.",
       "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
-      "images": "/src/assets/images/asics-gel-nimbus-24.jpg"
+      "image": "/src/assets/images/asics-gel-nimbus-24.jpg"
     },
     {
       "id": 2,
-      "name": "asics gel nimbus 24",
-      "price": 1299.99,
+      "name": "mizuno wave prophecy 11",
+      "price": 1599.99,
       "stock": 5,
-      "description": "Maximum comfort and comfort are perfect loves in the new Gelimbus 24 version.",
+      "description": "With one of the most beautiful designs at the moment, the Wave Prophecy 11S sneakers are perfect for you who prioritize quality and style at your events. The men's sneaker has an upper (upper part of the shoe) made of synthetic and textile material.",
       "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
-      "images": "/src/assets/images/asics-gel-nimbus-24.jpg"
+      "image": "/src/assets/images/mizuno-wave-prophecy-11.webp"
     },
     {
       "id": 3,
-      "name": "asics gel nimbus 24",
-      "price": 1299.99,
+      "name": "nike revolution 6",
+      "price": 1229.99,
       "stock": 5,
-      "description": "Maximum comfort and comfort are perfect loves in the new Gelimbus 24 version.",
+      "description": "Versatile and ultra comfortable for the gym, light running workouts and everyday use. Want a comfortable Nike sneaker with the best cost benefit? Revolution 6 is for you dynamic and modern. Its upper (upper part of the shoe) features lightness, breathability, maintains freshness and flexibility of movement.",
       "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
-      "images": "/src/assets/images/asics-gel-nimbus-24.jpg"
+      "image": "/src/assets/images/nike-revolution-6.webp"
     },
     {
       "id": 4,
-      "name": "asics gel nimbus 24",
-      "price": 1299.99,
+      "name": "nike downshifter 11",
+      "price": 1369.99,
       "stock": 5,
-      "description": "Maximum comfort and comfort are perfect loves in the new Gelimbus 24 version.",
+      "description": "From a leisurely walk to fitness training and light running make the Nike Downshifter 11 Shoes a great choice. Its upper (the upper part of the shoe) is made of light and soft textile for a comfortable and flexible fit.",
       "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
-      "images": "/src/assets/images/asics-gel-nimbus-24.jpg"
+      "image": "/src/assets/images/nike-downshifter-11.webp"
     },
     {
       "id": 5,
-      "name": "asics gel nimbus 24",
-      "price": 1299.99,
+      "name": "asics gel nagoya 4",
+      "price": 1169.99,
       "stock": 5,
-      "description": "Maximum comfort and comfort are perfect loves in the new Gelimbus 24 version.",
+      "description": "The perfect men's sneaker to accompany you when exercising outdoors, at the gym and even for everyday tasks is the Gel-Nagoya 4. It has the Gel Cushioning System technology that promotes the absorption of impacts.",
       "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
-      "images": "/src/assets/images/asics-gel-nimbus-24.jpg"
+      "image": "/src/assets/images/asics-gel-nagoya-4.webp"
+    },
+    {
+      "id": 6,
+      "name": "adidas runfalcon",
+      "price": 1779.99,
+      "stock": 5,
+      "description": "The upper part of the pants can be adjusted in mesh and light, ensures greater lace to the feet, providing greater breathability.",
+      "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
+      "image": "/src/assets/images/adidas-runfalcon.webp"
     }
   ]
 }
