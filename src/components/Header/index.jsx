@@ -38,9 +38,6 @@ export const Header = () => {
             <li>
               <S.HeaderLink to="shopping-cart">Shopping Cart</S.HeaderLink>
             </li>
-            <li>
-              <S.HeaderLink to="my-wishlist">Wishlist</S.HeaderLink>
-            </li>
           </ul>
         </nav>
       </S.HeaderContainer>

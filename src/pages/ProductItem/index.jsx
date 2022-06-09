@@ -1,9 +1,18 @@
 import * as S from './styles';
 import { api } from '../../api';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { CurrencyConverter } from '../../util/currency-converter';
+import { GlobalContext } from '../../contexts/GlobalProvider/context';
+import {
+  addToCart,
+  increaseProductQuantity,
+  removeToCart,
+} from '../../contexts/GlobalProvider/actions';
 
 export const ProductItem = () => {
+  const [alreadyExists, setAlreadyExists] = useState(false);
+  const { dispatch, cart } = useContext(GlobalContext);
   const [product, setProduct] = useState(null);
   const { idProduct } = useParams();
 
@@ -11,19 +20,38 @@ export const ProductItem = () => {
     api.get('products/' + idProduct).then(({ data }) => setProduct(data));
   }, [idProduct]);
 
-  if (!product) return;
+  useEffect(() => {
+    const indexFindProduct = cart.findIndex((productSearch) => {
+      return productSearch.id === Number(idProduct);
+    });
+
+    cart.includes(cart[indexFindProduct])
+      ? setAlreadyExists(true)
+      : setAlreadyExists(false);
+  }, [cart, idProduct]);
+
+  if (!product) return <h1>Loading...</h1>;
   return (
     <S.Container>
-      <img src={product.image} alt="text qualquer" />
+      <img src={product.image} alt="" />
       <div>
         <h1>{product.name}</h1>
-        <p>{product.price}</p>
+        <b>{CurrencyConverter(product.price)}</b>
         <p>{product.description}</p>
-        <ul>
-          {product.sizes.map((size) => (
-            <li key={size}>{size}</li>
-          ))}
-        </ul>
+        <S.Button>Comprar</S.Button>
+        {alreadyExists ? (
+          <S.Button onClick={() => removeToCart(dispatch, product.id)}>
+            Remover do carrinho
+          </S.Button>
+        ) : (
+          <S.Button onClick={() => addToCart(dispatch, product)}>
+            Adicionar ao carrinho
+          </S.Button>
+        )}
+        <S.Button onClick={() => increaseProductQuantity(dispatch, product.id)}>
+          Aumentar
+        </S.Button>
+        <S.Button>Diminuir</S.Button>
       </div>
     </S.Container>
   );
