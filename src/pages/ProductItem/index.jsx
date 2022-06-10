@@ -4,15 +4,10 @@ import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { CurrencyConverter } from '../../util/currency-converter';
 import { GlobalContext } from '../../contexts/GlobalProvider/context';
-import {
-  addToCart,
-  increaseProductQuantity,
-  removeToCart,
-} from '../../contexts/GlobalProvider/actions';
 
 export const ProductItem = () => {
   const [alreadyExists, setAlreadyExists] = useState(false);
-  const { dispatch, cart } = useContext(GlobalContext);
+  const { cart, addToCart, removeToCart } = useContext(GlobalContext);
   const [product, setProduct] = useState(null);
   const { idProduct } = useParams();
 
@@ -40,18 +35,14 @@ export const ProductItem = () => {
         <p>{product.description}</p>
         <S.Button>Comprar</S.Button>
         {alreadyExists ? (
-          <S.Button onClick={() => removeToCart(dispatch, product.id)}>
+          <S.Button onClick={() => removeToCart(product.id)}>
             Remover do carrinho
           </S.Button>
         ) : (
-          <S.Button onClick={() => addToCart(dispatch, product)}>
+          <S.Button onClick={() => addToCart(product)}>
             Adicionar ao carrinho
           </S.Button>
         )}
-        <S.Button onClick={() => increaseProductQuantity(dispatch, product.id)}>
-          Aumentar
-        </S.Button>
-        <S.Button>Diminuir</S.Button>
       </div>
     </S.Container>
   );

@@ -8,16 +8,9 @@ import { CurrencyConverter } from '../../util/currency-converter';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-export const Slider = ({ slideOf, breakpoints }) => {
+export const Slider = ({ slideOf, settings }) => {
   return (
-    <Swiper
-      tag="ul"
-      spaceBetween={20}
-      slidesPerView={3}
-      modules={[Navigation, A11y]}
-      breakpoints={breakpoints}
-      navigation
-    >
+    <Swiper modules={[Navigation, A11y]} {...settings}>
       {slideOf.map(({ id, name, description, price, image }) => (
         <SwiperSlide key={id} tag="li">
           <Link to={`/products/${id}`}>

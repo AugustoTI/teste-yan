@@ -1,14 +1,63 @@
 import P from 'prop-types';
-import { useReducer } from 'react';
+import { useState } from 'react';
 import { GlobalContext } from './context';
-import { reducer } from './reducer';
-import { data } from './shoppingCart';
 
 export const GlobalProvider = ({ children }) => {
-  const [cart, dispatch] = useReducer(reducer, data);
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    const newProduct = { ...product, amount: 1 };
+    setCart([...cart, newProduct]);
+  };
+
+  const removeToCart = (productID) => {
+    const cartUpdated = cart.filter((product) => product.id !== productID);
+    setCart(cartUpdated);
+  };
+
+  const clearCart = () => {
+    setCart([]);
+  };
+
+  const increaseAmount = (productID) => {
+    const cartUpdated = [...cart];
+    const productPosition = cartUpdated.findIndex(
+      (product) => product.id === productID,
+    );
+
+    if (
+      cartUpdated[productPosition].amount < cartUpdated[productPosition].stock
+    ) {
+      cartUpdated[productPosition].amount++;
+      setCart(cartUpdated);
+    }
+  };
+
+  const decreaseAmount = (productID) => {
+    const cartUpdated = [...cart];
+    const productPosition = cartUpdated.findIndex(
+      (product) => product.id === productID,
+    );
+
+    if (cartUpdated[productPosition].amount > 1) {
+      cartUpdated[productPosition].amount--;
+      setCart(cartUpdated);
+    } else {
+      removeToCart(productID);
+    }
+  };
 
   return (
-    <GlobalContext.Provider value={{ cart, dispatch }}>
+    <GlobalContext.Provider
+      value={{
+        cart,
+        addToCart,
+        removeToCart,
+        clearCart,
+        increaseAmount,
+        decreaseAmount,
+      }}
+    >
       {children}
     </GlobalContext.Provider>
   );
