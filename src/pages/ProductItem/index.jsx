@@ -7,7 +7,7 @@ import { GlobalContext } from '../../contexts/GlobalProvider/context';
 
 export const ProductItem = () => {
   const [alreadyExists, setAlreadyExists] = useState(false);
-  const { cart, addToCart, removeToCart } = useContext(GlobalContext);
+  const { cart, addToCart, removeFromCart } = useContext(GlobalContext);
   const [product, setProduct] = useState(null);
   const { idProduct } = useParams();
 
@@ -33,14 +33,14 @@ export const ProductItem = () => {
         <h1>{product.name}</h1>
         <b>{CurrencyConverter(product.price)}</b>
         <p>{product.description}</p>
-        <S.Button>Comprar</S.Button>
+        <S.Button>Buy now</S.Button>
         {alreadyExists ? (
-          <S.Button onClick={() => removeToCart(product.id)}>
-            Remover do carrinho
+          <S.Button onClick={() => removeFromCart(product.id)}>
+            Remove from Shopping Cart
           </S.Button>
         ) : (
           <S.Button onClick={() => addToCart(product)}>
-            Adicionar ao carrinho
+            Add to Shopping Cart
           </S.Button>
         )}
       </div>

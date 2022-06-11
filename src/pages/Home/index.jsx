@@ -1,5 +1,5 @@
 import * as S from './styles';
-import imgHome from '../../assets/images/image.jpg';
+import imgHome from '../../assets/images/Image.jpg';
 
 export const Home = () => {
   return (

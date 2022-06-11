@@ -10,7 +10,7 @@ export const GlobalProvider = ({ children }) => {
     setCart([...cart, newProduct]);
   };
 
-  const removeToCart = (productID) => {
+  const removeFromCart = (productID) => {
     const cartUpdated = cart.filter((product) => product.id !== productID);
     setCart(cartUpdated);
   };
@@ -43,7 +43,7 @@ export const GlobalProvider = ({ children }) => {
       cartUpdated[productPosition].amount--;
       setCart(cartUpdated);
     } else {
-      removeToCart(productID);
+      removeFromCart(productID);
     }
   };
 
@@ -52,7 +52,7 @@ export const GlobalProvider = ({ children }) => {
       value={{
         cart,
         addToCart,
-        removeToCart,
+        removeFromCart,
         clearCart,
         increaseAmount,
         decreaseAmount,
