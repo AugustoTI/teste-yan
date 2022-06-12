@@ -1,9 +1,11 @@
 import * as S from './styles';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { GlobalContext } from '../../contexts/GlobalProvider/context';
 import { CurrencyConverter } from '../../util/currency-converter';
+import { Modal } from '../../components/Modal';
 
 export const ShoppingCart = () => {
+  const [modalActive, setModalActive] = useState(false);
   const { cart, increaseAmount, decreaseAmount, clearCart } =
     useContext(GlobalContext);
 
@@ -17,7 +19,7 @@ export const ShoppingCart = () => {
           {cart.length > 0 && (
             <>
               <S.Button onClick={() => clearCart()}>Clear Cart</S.Button>
-              <S.Button>Buy now</S.Button>
+              <S.Button onClick={() => setModalActive(true)}>Buy now</S.Button>
             </>
           )}
         </div>
@@ -42,6 +44,7 @@ export const ShoppingCart = () => {
           </ul>
         </S.ListContainer>
       </S.Container>
+      <Modal setModal={setModalActive} modalActive={modalActive} />
     </>
   );
 };

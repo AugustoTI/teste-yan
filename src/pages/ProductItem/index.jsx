@@ -4,12 +4,14 @@ import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { CurrencyConverter } from '../../util/currency-converter';
 import { GlobalContext } from '../../contexts/GlobalProvider/context';
+import { Modal } from '../../components/Modal';
 
 export const ProductItem = () => {
   const [alreadyExists, setAlreadyExists] = useState(false);
   const { cart, addToCart, removeFromCart } = useContext(GlobalContext);
   const [product, setProduct] = useState(null);
   const { idProduct } = useParams();
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     api.get('products/' + idProduct).then(({ data }) => setProduct(data));
@@ -33,7 +35,7 @@ export const ProductItem = () => {
         <h1>{product.name}</h1>
         <b>{CurrencyConverter(product.price)}</b>
         <p>{product.description}</p>
-        <S.Button>Buy now</S.Button>
+        <S.Button onClick={() => setShowModal(true)}>Buy now</S.Button>
         {alreadyExists ? (
           <S.Button onClick={() => removeFromCart(product.id)}>
             Remove from Shopping Cart
@@ -44,6 +46,7 @@ export const ProductItem = () => {
           </S.Button>
         )}
       </div>
+      <Modal modalActive={showModal} setModal={setShowModal} />
     </S.Container>
   );
 };
